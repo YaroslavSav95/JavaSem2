@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+
+public class Scan {
+  /**
+     *
+     */
+    private static final String ФАЙЛ_НЕ_НАЙДЕН = "Файл не найден.";
+
+public static void main(String[] args) {
+    String Path;
+	File file = extracted(Path);
+    PrintWriter pw;
+    try {
+        pw = new PrintWriter(file);
+    } catch (FileNotFoundException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    Scanner num = new Scanner(System.in);
+    System.out.println("Введите число");
+    byte a = num.nextByte();
+    pw.println(a);
+    pw.close();
+  }
+
+private static File extracted(String Path) {
+    return new File(Path:"result");
+}
+}
